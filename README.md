@@ -84,7 +84,7 @@ População Inicial (20 rotas aleatórias)
 
 ### Pré-requisitos
 - Python 3.8 ou superior
-- `cidades.mat` na mesma pasta que `main.py`
+- `cidades.mat` na mesma pasta que `ag_pcv.py`
 
 ### Passo a passo
 
@@ -112,7 +112,7 @@ pip install -r requirements.txt
 
 4. Execute:
 ```bash
-python main.py
+python ag_pcv.py
 ```
 
 O programa imprime o relatório no console e abre dois gráficos: a curva de convergência e a melhor rota encontrada. O gráfico também é salvo como `resultado.png`.
