@@ -36,13 +36,13 @@ Este é um estudo prático de **Inteligência Artificial** focado na implementa�
 
 ```
 AlgoritmoGenetico/
-├── main.py                        # Código principal (classe AlgoritmoGenetico + main)
-├── algoritmo_genetico_tsp.ipynb   # Versão Jupyter Notebook com experimentos extras
 ├── DOCUMENTACAO_TECNICA.md        # Explicação detalhada de cada parte do código
+├── README.md                      # Este arquivo
+├── ag_pcv.py                      # Código principal (classe AlgoritmoGenetico + main)
+├── algoritmo_genetico_tsp.ipynb   # Versão Jupyter Notebook com experimentos extras
 ├── cidades.mat                    # Coordenadas das 20 cidades
 ├── requirements.txt               # Dependências do projeto
-├── resultado.png                  # Gráfico gerado após execução (criado ao rodar)
-└── README.md                      # Este arquivo
+└── resultado.png                  # Gráfico gerado após execução (criado ao rodar)
 ```
 
 ---
