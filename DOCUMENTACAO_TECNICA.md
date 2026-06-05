@@ -1,12 +1,14 @@
-# 📖 Documentação Técnica — Algoritmo Genético para TSP
+# 📖 Documentação Técnica — ag_pcv.py / algoritmo_genetico_tsp.ipynb
 
-Este documento explica cada parte do código `main.py` em detalhe, com foco em entendimento real de cada decisão de implementação.
+Este documento explica cada parte do código `ag_pcv.py` em detalhe, com foco em entendimento real de cada decisão de implementação.
 
 ---
 
 ## Visão Geral da Arquitetura
 
 O código está organizado em uma única classe (`AlgoritmoGenetico`) mais uma função `main()`. A classe encapsula todo o estado e a lógica do algoritmo; a `main()` cuida de carregar dados, executar e exibir resultados.
+
+No `ag_pcv.py` tudo roda de uma vez ao executar o script. No `algoritmo_genetico_tsp.ipynb` a mesma lógica está quebrada em células independentes — a classe fica na célula 3, e o restante nas células 4 a 9.
 
 ---
 
@@ -203,9 +205,12 @@ Retorna o indivíduo com menor distância total. Após a execução completa, a 
 
 ---
 
-## Função `main()`
+## Função `main()` — exclusiva do `ag_pcv.py`
 
-### Carregamento dos dados
+No notebook, este bloco está distribuído nas células 4, 5, 6 e 7. No script `ag_pcv.py`, tudo está encapsulado na função `main()` chamada ao final.
+
+
+### Carregamento dos dados (Célula 2 no notebook)
 
 ```python
 data = np.loadtxt("cidades.mat")
@@ -214,7 +219,7 @@ x, y = data[0], data[1]
 
 `np.loadtxt` ignora linhas que começam com `#` por padrão, então o formato do arquivo Octave/MATLAB (`# name: x`, `# type: global matrix`, etc.) é tratado corretamente sem nenhuma configuração extra.
 
-### Loop principal
+### Loop principal (Célula 5 no notebook)
 
 ```python
 for _ in range(GENERATIONS):
@@ -223,7 +228,7 @@ for _ in range(GENERATIONS):
 
 Simples: chama `evoluir()` 10.000 vezes. Não há critério de parada antecipada — o algoritmo roda todas as gerações independente de ter convergido.
 
-### Gráficos
+### Gráficos (Célula 7 no notebook)
 
 **Convergência:** plota `ag.historico`, que tem 10.001 pontos (geração 0 até geração 10.000). O `set_xlim(0, GENERATIONS)` garante que o eixo X sempre vai até 10.000, mesmo que a melhoria pare antes.
 
@@ -239,6 +244,3 @@ Simples: chama `evoluir()` 10.000 vezes. Não há critério de parada antecipada
 | `aptidoes` | `ndarray` float | `(20,)` | distância total de cada indivíduo |
 | `matriz_custo` | `ndarray` float | `(20, 20)` | distância entre cada par de cidades |
 | `historico` | lista de float | `(10001,)` | melhor custo de cada geração |
-
-
-
